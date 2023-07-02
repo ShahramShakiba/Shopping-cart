@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Bed Shop is dedicated to improving our customer's quality of life
+    by providing quality sleep with our affordable luxury beds for sale."
+    />
+    <meta
+      name="keywords"
+      content="bed, matters, bed frames, bed store, bedroom, html, css, javascript, js"
+    />
+    <meta name="author" content="Shahram Shakiba" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="/Style.css" />
+    <title>BED SHOP</title>
+  </head>
+  <body>
+    <!--===================$ HEADER $===================-->
+    <header>
+      <!-- NavBar -->
+      <nav class="navbar">
+        <div class="nav-center">
+          <div class="nav-list-center">
+            <ul class="nav-list">
+              <li>Home</li>
+              <li>Shop</li>
+            </ul>
+          </div>
+          <h1 class="nav-title">BedShop</h1>
+          <div class="nav-list-center">
+            <ul class="nav-list">
+              <li>Blog</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div class="cart-btn">
+            <span class="nav-icon">
+              <i class="fas fa-cart-plus"></i>
+            </span>
+            <div class="cart-items">0</div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--===================$ MAIN $===================-->
+    <main>
+      <!-- Search Container -->
+      <section>
+        <div class="search-container">
+          <div class="search-border">
+            <i class="search-icon fa-solid fa-magnifying-glass"></i>
+            <input class="search" type="search" placeholder="Search" />
+          </div>
+        </div>
+
+        <!-- Products -->
+        <div class="products">
+          <h2 class="section-title">Products</h2>
+          <!-- single Products -->
+          <div class="products-center">
+            <!-- Product-1 -->
+            <!-- <div class="product">
+              <div class="img-container">
+                <img
+                  class="product-img"
+                  src="./Images/2000$_country-living-thirlmere-divan-bed-and-headboard.jpg"
+                  alt="p-1"
+                />
+              </div>
+              <div class="product-desc">
+                <p class="product-title">
+                  Country Living Divan Bed & Headboard
+                </p>
+                <p class="product-price">$2000</p>
+              </div>
+              <button class="add-to-cart">Purchase</button>
+            </div> -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--===================$ FOOTER $===================-->
+    <footer>
+      <!-- FOOTER -->
+      <section class="footer">
+        <div class="author-container">
+          <span>
+            <i class="fa-solid fa-user-tie"></i>
+            <p>Author : Shahram Shakiba</p>
+          </span>
+          <span>
+            <i class="fa-solid fa-envelope"></i>
+            <a class="mail" href="mailto:sheriofficial21@gmail.com"
+              >sheriofficial21@gmail.com</a
+            >
+          </span>
+        </div>
+        <div class="social-media">
+          <div class="social-icon">
+            <span>
+              <i class="fa-brands fa-instagram"></i>
+            </span>
+            <span>
+              <i class="fa-brands fa-twitter"></i>
+            </span>
+            <span>
+              <i class="fa-brands fa-telegram"></i>
+            </span>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <!-- Cart Section -->
+    <section class="cart-center">
+      <div class="backdrop"></div>
+
+      <!-- <button class="btn show-modal">Show Modal</button> -->
+      <div class="cart">
+        <h3 class="cart-title">Your Cart</h3>
+        <div class="cart-content">
+          <!-- single item -->
+        </div>
+        <div class="cart-footer">
+          <span class="cart-total">total price: 90 $</span>
+          <button class="btn clear-cart">clear cart</button>
+          <button class="btn cart-item-confirm">confirm</button>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="/APP.js"></script>
+  </body>
+</html>
