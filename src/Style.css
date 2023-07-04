@@ -15,10 +15,9 @@
 :root {
   --primaryColor: rgba(148, 148, 110, 0.99);
   --lightColor: rgba(172, 172, 139, 0.5);
-  --darkColor: rgba(172, 172, 140, 0.75);
+  /* --darkColor: rgba(172, 172, 140, 0.75); */
   --mainBlack: rgb(44, 44, 0);
   --mainButton: rgba(97, 97, 61, 0.99);
-  --mainRed: rgb(219, 39, 119);
   --bodyColor: #ececec;
 
   --mainShadow: 0 0 7px rgba(0, 0, 0, 0.4);
@@ -77,7 +76,7 @@ header {
 }
 
 .nav-list li:hover {
-  padding-bottom: .2rem;
+  padding-bottom: 0.2rem;
   opacity: 0.8;
   border-bottom: 2px solid;
 }
@@ -126,34 +125,36 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
 }
 
 .search-border {
-  width: 30%;
-  border: 1px solid var(--secondaryColor);
+  width: 50%;
+  border: 1px solid var(--lightColor);
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  padding: 0.8rem 1rem;
   border-radius: 8px;
 }
 
 .search-icon {
-  color: var(--primaryColor);
+  color: var(--mainButton);
   cursor: pointer;
 }
 
 .search {
   width: 100%;
+  font-family: 'Raleway', sans-serif;
   padding-left: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   outline: none;
   border: none;
-  background-color: var(--bodyColor);
+  background-color: transparent;
 }
 
-/* --PRODUCTS-- */
+/*================$ Products $================*/
 .products {
   display: flex;
   flex-direction: column;
