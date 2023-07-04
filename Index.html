@@ -22,7 +22,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="/Style.css" />
+    <link rel="stylesheet" href="./src/Style.css" />
     <title>BED SHOP</title>
   </head>
   <body>
@@ -44,6 +44,8 @@
               <li>Contact</li>
             </ul>
           </div>
+
+          <!--# shopping-cart #-->
           <div class="cart-btn">
             <span class="nav-icon">
               <i class="fas fa-cart-plus"></i>
@@ -70,8 +72,9 @@
           <h2 class="section-title">Products</h2>
           <!-- single Products -->
           <div class="products-center">
+
             <!-- Product-1 -->
-            <!-- <div class="product">
+            <div class="product">
               <div class="img-container">
                 <img
                   class="product-img"
@@ -86,7 +89,7 @@
                 <p class="product-price">$2000</p>
               </div>
               <button class="add-to-cart">Purchase</button>
-            </div> -->
+            </div>
           </div>
         </div>
       </section>
@@ -123,16 +126,37 @@
         </div>
       </section>
     </footer>
-    <!-- Cart Section -->
-    <section class="cart-center">
+
+    <!--==============$ Modal - Cart Section $=============-->
+    <section class="cart-modal">
       <div class="backdrop"></div>
 
-      <!-- <button class="btn show-modal">Show Modal</button> -->
       <div class="cart">
+        <!--# cart-header #-->
         <h3 class="cart-title">Your Cart</h3>
+
+        <!--# cart-body #-->
         <div class="cart-content">
-          <!-- single item -->
+          <img
+            src="./images/119$-dreams-latex-pillow.jpg"
+            class="cart-item-img"
+          />
+
+          <div class="cart-item-desc">
+            <h4>product title</h4>
+            <h5>$ 12.99</h5>
+          </div>
+
+          <div class="cart-item-controller">
+            <i class="fa-solid fa-chevron-up"></i>
+            <p></p>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+
+          <i class="fa-regular fa-trash-can"></i>
         </div>
+
+        <!--# cart-footer #-->
         <div class="cart-footer">
           <span class="cart-total">total price: 90 $</span>
           <button class="btn clear-cart">clear cart</button>
@@ -141,6 +165,6 @@
       </div>
     </section>
 
-    <script type="module" src="/APP.js"></script>
+    <script type="module" src="./src/app.js"></script>
   </body>
 </html>
