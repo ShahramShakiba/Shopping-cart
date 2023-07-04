@@ -25,6 +25,10 @@
   --mainTransition: all 0.3s linear;
 }
 
+html {
+  width: 100%;
+}
+
 body {
   color: var(--mainBlack);
   font-family: 'Poppins', sans-serif;
@@ -342,7 +346,7 @@ footer {
   border-bottom: 2px solid #fff;
 }
 
-/* ------------- End of Products ------------- */
+/*================$ Modal $================*/
 .backdrop.show {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -474,32 +478,240 @@ footer {
   margin-right: 10px;
 }
 
-/* --MEDIA QUARRY-- */
-@media (max-width: 600px) {
-  .cart {
-    left: 5% !important;
-    max-width: 50rem;
-    width: calc(100vw - 2rem);
-    padding: 0;
+/*================$ Media Query $================*/
+@media screen and (max-width: 425px) {
+  .navbar {
+    width: calc(100vw + 8.3rem);
+    font-size: 0.85rem;
+  }
+
+  .nav-list {
+    align-items: center;
+  }
+
+  .search-container {
+    width: calc(100vw + 8.3rem);
+  }
+
+  .search {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .products {
+    width: calc(100vw + 8.3rem);
+  }
+
+  .products-center {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    padding: 1rem;
+  }
+
+  .product {
+    padding-bottom: 0.5rem;
+  }
+
+  .product-title {
+    padding-inline: 15px;
+  }
+
+  .product-price {
+    margin-right: 15px;
+  }
+
+  footer {
+    width: calc(100vw + 8.3rem);
   }
 }
 
-@media screen and (min-width: 1170px) {
-  .nav-center {
-    max-width: 1170px;
+@media screen and (min-width: 425px) and (max-width: 550px) {
+  .navbar {
+    width: calc(100vw + 12.3rem);
+    font-size: 0.9rem;
   }
 
-  .search-border {
-    max-width: 1170px;
+  .nav-list {
+    align-items: center;
   }
 
-  .footer {
-    max-width: 1440px;
+  .search-container {
+    width: calc(100vw + 12.3rem);
   }
 
-  /* .cart-modal {
-    max-width: 1440px;
-  } */
+  .products {
+    width: calc(100vw + 12.3rem);
+  }
+
+  .products-center {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .product {
+    width: 250px;
+    padding-bottom: 0.5rem;
+  }
+
+  .product-title {
+    padding-inline: 15px;
+  }
+
+  .product-price {
+    margin-right: 15px;
+  }
+
+  footer {
+    width: calc(100vw + 12.3rem);
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 768px) {
+  .navbar {
+    width: calc(100vw + 4rem);
+    font-size: 0.9rem;
+  }
+
+  .nav-list {
+    align-items: center;
+  }
+
+  .search-container {
+    width: calc(100vw + 4rem);
+  }
+
+  .products {
+    width: calc(100vw + 4rem);
+  }
+
+  .products-center {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+    padding: 1.3rem;
+  }
+
+  .product {
+    width: 270px;
+    padding-bottom: 0.5rem;
+  }
+
+  .product-title {
+    padding-inline: 15px;
+  }
+
+  .product-price {
+    margin-right: 15px;
+  }
+
+  footer {
+    width: calc(100vw + 4rem);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 850px) {
+  .navbar {
+    font-size: 0.9rem;
+  }
+
+  .nav-list {
+    align-items: center;
+  }
+
+  .products-center {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 4rem;
+    padding: 1.3rem;
+  }
+
+  .product {
+    width: 210px;
+    padding-bottom: 0.5rem;
+  }
+
+  .product-title {
+    padding-inline: 15px;
+  }
+
+  .product-price {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1024px) {
+  .navbar {
+    width: calc(100vw + 7rem);
+    font-size: 1.2rem;
+  }
+
+  .nav-list {
+    align-items: center;
+  }
+
+  .search-container {
+    width: calc(100vw + 7rem);
+  }
+
+  .products {
+    width: calc(100vw + 7rem);
+  }
+
+  .products-center {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 4rem;
+    padding: 2rem;
+  }
+
+  .product {
+    width: 280px;
+    padding-bottom: 0.5rem;
+  }
+
+  .product-title {
+    padding-inline: 15px;
+  }
+
+  .product-price {
+    margin-right: 15px;
+  }
+
+  footer {
+    width: calc(100vw + 7rem);
+  }
+}
+
+@media screen and (min-width: 1024px)  {
+  .products-center {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2.5rem;
+    row-gap: 4rem;
+    padding: 2rem;
+  }
+
+  .product {
+    width: 280px;
+    padding-bottom: 0.5rem;
+  }
+
+  .product-title {
+    padding-inline: 15px;
+  }
+
+  .product-price {
+    margin-right: 15px;
+  }
+
+  .author-container {
+    flex-direction: row;
+  }
+
+  .social-icon {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /*================$ ScrollBar $================*/
