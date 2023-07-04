@@ -1,3 +1,14 @@
+/*==================== Document Title ===================*/
+let alertShow = false;
+
+setInterval(() => {
+  document.title = alertShow ? 'Follow me🤞' : 'on GitHub✌';
+
+  alertShow = !alertShow;
+}, 1000);
+
+/*====================== Document Title ===================*/
+
 const cartBtn = document.querySelector('.cart-btn'),
   cartModal = document.querySelector('.cart'),
   backDrop = document.querySelector('.backdrop'),
