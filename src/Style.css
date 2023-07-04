@@ -19,7 +19,7 @@
   --mainButton: rgba(97, 97, 61, 0.99);
   --bodyColor: #ececec;
 
-  --mainShadow: 0 0 7px rgba(0, 0, 0, 0.4);
+  --mainShadow: 0 0 5px rgba(0, 0, 0, 0.1);
   --mainSpacing: 0.2rem;
 
   --mainTransition: all 0.3s linear;
@@ -99,7 +99,7 @@ header {
 }
 
 .nav-icon {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .nav-icon i {
@@ -110,7 +110,7 @@ header {
   position: absolute;
   width: 18px;
   height: 18px;
-  top: -14px;
+  top: -12px;
   right: -1px;
   display: flex;
   justify-content: center;
@@ -118,7 +118,7 @@ header {
   color: #d96098;
   border: 1px solid rgba(0, 0, 0, 0.007);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 /*============$ Search Container $=============*/
@@ -160,16 +160,14 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 2rem;
 }
 
 .section-title {
   font-size: 1.2rem;
   color: var(--mainButton);
   letter-spacing: var(--mainSpacing);
-  text-shadow: var(--mainShadow);
   margin: 2rem 0 1rem;
-  animation: wiggle 5s linear infinite;
+  animation: wiggle 6s linear infinite;
 }
 
 @keyframes wiggle {
@@ -178,19 +176,19 @@ header {
     transform: rotateZ(0);
   }
   15% {
-    transform: rotateZ(-6deg);
+    transform: rotateZ(-4deg);
   }
   20% {
-    transform: rotateZ(5deg);
-  }
-  25% {
-    transform: rotateZ(-5deg);
-  }
-  30% {
     transform: rotateZ(3deg);
   }
+  25% {
+    transform: rotateZ(-3deg);
+  }
+  30% {
+    transform: rotateZ(2deg);
+  }
   35% {
-    transform: rotateZ(-2deg);
+    transform: rotateZ(-1deg);
   }
   40%,
   100% {
@@ -202,7 +200,7 @@ header {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1024px;
   color: var(--mainBlack);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -223,25 +221,23 @@ header {
   padding-bottom: 2rem;
   box-shadow: var(--mainShadow);
   border-radius: 8px;
+  overflow: hidden;
+}
+
+.img-container {
+  width: 100%;
 }
 
 .product-img {
   width: 100%;
-  min-height: 12rem;
   display: block;
   border: 1px solid var(--secondaryColor);
-  border-radius: 8px;
   cursor: pointer;
-  margin-top: 0.5rem;
-}
-
-img:hover {
-  transform: scale(1.12);
-  box-shadow: var(--mainShadow);
-}
-
-img {
   transition: all 0.3s linear;
+}
+
+.product-img:hover {
+  transform: scale(1.12);
 }
 
 .product-desc {
@@ -273,15 +269,19 @@ img {
   background-color: var(--mainButton);
   color: var(--bodyColor);
   padding: 10px 30px;
-  margin: 35px 0 1px 0;
+  margin: 35px 0 10px 0;
   font-weight: bolder;
   box-shadow: var(--mainShadow);
   cursor: pointer;
 }
 
 .add-to-cart:hover {
-  background-color: var(--bodyColor);
+  background: none;
+  box-shadow: none;
   color: var(--mainButton);
+  border-radius: 0;
+  border-bottom: 2px solid #fff;
+  font-weight: 900;
 }
 
 /*================$ FOOTER $================*/
@@ -502,17 +502,16 @@ footer {
   } */
 }
 
-/* --SCROLL BAR-- */
+/*================$ ScrollBar $================*/
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 5px;
-  background: var(--thirdColor);
+  background: var(--lightColor);
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 15px;
-  background: var(--mainButton);
+  border-radius: 5px;
+  background-color: var(--primaryColor);
 }
