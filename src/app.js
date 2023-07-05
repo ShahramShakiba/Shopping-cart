@@ -2,12 +2,12 @@
 let alertShow = false;
 
 setInterval(() => {
-  document.title = alertShow ? 'Follow me🤞' : 'on GitHub✌';
+  document.title = alertShow ? 'Follow me 😍' : 'on GitHub ✌';
 
   alertShow = !alertShow;
 }, 1000);
 
-/*====================== Document Title ===================*/
+/*======================== Modal =====================*/
 
 const cartBtn = document.querySelector('.cart-btn'),
   cartModal = document.querySelector('.cart'),
