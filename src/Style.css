@@ -115,14 +115,13 @@ header {
   width: 18px;
   height: 18px;
   top: -12px;
-  right: -1px;
+  right: -5px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #d96098;
-  border: 1px solid rgba(0, 0, 0, 0.007);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 /*============$ Search Container $=============*/
@@ -269,10 +268,10 @@ header {
 .add-to-cart {
   outline: none;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   background-color: var(--mainButton);
   color: var(--bodyColor);
-  padding: 10px 30px;
+  padding: 10px 20px;
   margin: 35px 0 10px 0;
   font-weight: bolder;
   box-shadow: var(--mainShadow);
@@ -280,11 +279,7 @@ header {
 }
 
 .add-to-cart:hover {
-  background: none;
-  box-shadow: none;
-  color: var(--mainButton);
-  text-decoration: underline;
-  letter-spacing: 3px;
+  opacity: 0.8;
 }
 
 /*================$ FOOTER $================*/
@@ -354,6 +349,7 @@ footer {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   z-index: 5;
 }
 
@@ -362,11 +358,11 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 15%;
   width: 34rem;
   min-height: 240px;
-  background-color: #fff;
+  background-color: var(--bodyColor);
   margin: 0 auto;
   padding: 1.2rem;
   border: 1px solid #ccc;
@@ -460,36 +456,52 @@ footer {
 }
 
 .clear-cart {
-  background-color: var(--mainWhite);
+  background-color: #fff;
   border: 1px solid var(--primaryColor);
-  padding: 0.2rem;
+  padding: 0.2rem 0.5rem;
   color: var(--mainRed);
   border-radius: 5px;
   margin-right: 10px;
   cursor: pointer;
 }
 
+.clear-cart:hover {
+  color: var(--bodyColor);
+  background-color: var(--mainButton);
+}
+
 .cart-item-confirm {
-  background-color: var(--mainWhite);
-  border: 1px solid var(--primaryColor);
-  padding: 0.2rem;
+  background-color: #fff;
   color: var(--mainButton);
+  border: 1px solid var(--primaryColor);
+  padding: 0.2rem 0.5rem;
   border-radius: 5px;
   margin-right: 10px;
   cursor: pointer;
 }
 
+.cart-item-confirm:hover {
+  color: var(--bodyColor);
+  background-color: var(--mainButton);
+}
+
 /*================$ Media Query $================*/
 @media screen and (max-width: 425px) {
-  .navbar, .search-container, .products, footer {
+  .navbar,
+  .search-container,
+  .products,
+  footer {
     width: calc(100vw + 8.3rem);
   }
 
-  .navbar, .search, .products {
+  .navbar,
+  .search,
+  .products {
     font-size: 0.85rem;
   }
 
-  .nav-list, .search-container {
+  .nav-list,
+  .search-container {
     align-items: center;
   }
 
@@ -513,15 +525,21 @@ footer {
 }
 
 @media screen and (min-width: 425px) and (max-width: 550px) {
-  .navbar, .search-container, .products, footer {
+  .navbar,
+  .search-container,
+  .products,
+  footer {
     width: calc(100vw + 12.3rem);
   }
 
-  .navbar, .search, .products {
+  .navbar,
+  .search,
+  .products {
     font-size: 0.9rem;
   }
 
-  .nav-list, .search-container {
+  .nav-list,
+  .search-container {
     align-items: center;
   }
 
@@ -546,15 +564,21 @@ footer {
 }
 
 @media screen and (min-width: 550px) and (max-width: 768px) {
-  .navbar, .search-container, .products, footer {
+  .navbar,
+  .search-container,
+  .products,
+  footer {
     width: calc(100vw + 4rem);
   }
 
-  .navbar, .search, .products {
+  .navbar,
+  .search,
+  .products {
     font-size: 0.9rem;
   }
 
-  .nav-list, .search-container {
+  .nav-list,
+  .search-container {
     align-items: center;
   }
 
@@ -580,7 +604,8 @@ footer {
 }
 
 @media screen and (min-width: 768px) and (max-width: 850px) {
-  .navbar, .products-center {
+  .navbar,
+  .products-center {
     font-size: 0.9rem;
   }
 
@@ -610,15 +635,21 @@ footer {
 }
 
 @media screen and (min-width: 850px) and (max-width: 1024px) {
-  .navbar, .search-container, .products, footer {
+  .navbar,
+  .search-container,
+  .products,
+  footer {
     width: calc(100vw + 7rem);
   }
 
-  .navbar, .search, .products {
+  .navbar,
+  .search,
+  .products {
     font-size: 1.2rem;
   }
 
-  .nav-list, .search-container {
+  .nav-list,
+  .search-container {
     align-items: center;
   }
 
@@ -637,13 +668,13 @@ footer {
   .product-title {
     padding-inline: 15px;
   }
-  
+
   .product-price {
     margin-right: 15px;
   }
 }
 
-@media screen and (min-width: 1024px)  {
+@media screen and (min-width: 1024px) {
   .products-center {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2.5rem;
