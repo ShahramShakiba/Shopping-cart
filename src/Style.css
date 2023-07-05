@@ -283,9 +283,8 @@ header {
   background: none;
   box-shadow: none;
   color: var(--mainButton);
-  border-radius: 0;
-  border-bottom: 2px solid #fff;
-  font-weight: 900;
+  text-decoration: underline;
+  letter-spacing: 3px;
 }
 
 /*================$ FOOTER $================*/

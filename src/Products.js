@@ -1,4 +1,5 @@
-// ( STEP 03 ) ---make our products data---
+/*============ Build our products data ==============*/
+
 export const productsData = [
   {
     id: 1,
