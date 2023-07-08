@@ -17,14 +17,22 @@ const cartBtn = document.querySelector('.cart-btn'),
   backDrop = document.querySelector('.backdrop'),
   closeModalBtn = document.querySelector('.cart-item-confirm');
 
-function toggleModal() {
-  cartModal.classList.toggle('show');
-  backDrop.classList.toggle('show');
-}
+  function showModalFunction() {
+    backDrop.style.display = "block";
+    cartModal.style.opacity = "1";
+    cartModal.style.top = "21%";
+    cartModal.style.position = "fixed";
+  }
+  
+  function closeModalFunction() {
+    backDrop.style.display = "none";
+    cartModal.style.opacity = "0";
+    cartModal.style.top = "-100%";
+  }
 
-cartBtn.addEventListener('click', toggleModal);
-closeModalBtn.addEventListener('click', toggleModal);
-backDrop.addEventListener('click', toggleModal);
+cartBtn.addEventListener('click', showModalFunction);
+closeModalBtn.addEventListener('click', closeModalFunction);
+backDrop.addEventListener('click', closeModalFunction);
 
 /*==================== Get Products ===================*/
 class Products {
@@ -37,7 +45,7 @@ class Products {
 /*================== Display Products =================*/
 const productsDOM = document.querySelector('.products-center'),
   cartTotal = document.querySelector('.cart-total'),
-  cartItemsCount = document.querySelector('.cart-items'),
+  cartItemsCounter = document.querySelector('.cart-items'),
   cartContent = document.querySelector('.cart-content');
 
 let cart = [];
@@ -66,7 +74,7 @@ class UI {
           </p>
         </div>
 
-        <button class="add-to-cart" data-id= "${item.id}" >
+        <button class="btn add-to-cart" data-id=${item.id}>
           Purchase
         </button>
       </div>
@@ -77,29 +85,28 @@ class UI {
   }
 
   getCartBtns() {
-    const addCartBtn = document.querySelectorAll('.add-to-cart');
-
     //-> convert NodeList to Array
-    const buttons = [...addCartBtn];
+    const addCartBtns = document.querySelectorAll('.add-to-cart');
 
-    buttons.forEach((btn) => {
+    //-> display products on cart
+    addCartBtns.forEach((btn) => {
       const id = btn.dataset.id;
 
       //-> check if product is in the cart
       const isExist = cart.find((p) => p.id === id);
       if (isExist) {
-        btn.textContent = 'Added';
+        btn.innerText = 'Added';
         btn.disabled = true;
       }
 
       btn.addEventListener('click', (e) => {
         //-> when btn clicked to add product to cart
-        e.target.textContent = 'Added';
+        e.target.innerText = 'Added';
         e.target.disabled = true;
 
         //-> get products from localStorage
-        const addedProduct = { ...Storage.getProduct(id), quantity: 1 };
-        console.log(addedProduct);
+        const addedProduct = { ...Storage.getProducts(id), quantity: 1 };
+
         //-> add to cart
         cart = [...cart, addedProduct];
 
@@ -128,8 +135,8 @@ class UI {
       return acc + curr.quantity * curr.price;
     }, 0);
 
-    cartTotal.textContent = `Total price: $ ${totalPrice.toFixed(2)}`;
-    cartItemsCount.textContent = tempCartItems;
+    cartTotal.innerText = `Total price: $ ${totalPrice.toFixed(2)}`;
+    cartItemsCounter.innerText = tempCartItems;
   }
 
   addCartItem(cartItem) {
@@ -148,12 +155,12 @@ class UI {
     </div>
 
     <div class="cart-item-controller">
-      <i class="ri-arrow-up-s-line arrow-up"></i>
+      <i class="ri-arrow-up-s-line arrow-up" data-id=${cartItem.id}></i>
       <p>${cartItem.quantity}</p>
-      <i class="ri-arrow-down-s-line arrow-down"></i>
+      <i class="ri-arrow-down-s-line arrow-down" data-id=${cartItem.id}></i>
     </div>
 
-    <i class="ri-delete-bin-line trash"></i>
+    <i class="ri-delete-bin-line trash" data-id=${cartItem.id}></i>
     `;
 
     cartContent.appendChild(div);
@@ -164,7 +171,16 @@ class UI {
     cart = Storage.getCart() || [];
 
     //-> addCartItem to Modal
-    cart.forEach((cartItem) => this.addCartItem(cartItem));
+    cart.forEach((cartItem) => {
+      const addCartBtn = document.querySelector(`[data-id="${cartItem.id}"]`);
+  
+      if (addCartBtn) {
+        addCartBtn.innerText = 'Added';
+        addCartBtn.disabled = true;
+      }
+  
+      this.addCartItem(cartItem);
+    });
 
     // set values: price + item
     this.setCartValue(cart);
@@ -177,10 +193,10 @@ class Storage {
     localStorage.setItem('products', JSON.stringify(products));
   }
 
-  static getProduct(id) {
+  static getProducts(id) {
     const _products = JSON.parse(localStorage.getItem('products'));
 
-    // parseInt() -> covert string to integer
+    // parseInt(): convert string to integer
     return _products.find((p) => p.id === parseInt(id));
   }
 
