@@ -17,6 +17,7 @@
   --lightColor: rgba(172, 172, 139, 0.5);
   --mainBlack: rgb(61, 61, 44);
   --mainButton: rgba(97, 97, 61, 0.99);
+  --mainRed: #d96098;
   --bodyColor: #ececec;
 
   --mainShadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -119,7 +120,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #d96098;
+  color: var(--mainRed);
   font-weight: 700;
   font-size: 0.9rem;
 }
@@ -425,17 +426,19 @@ footer {
   color: var(--mainButton);
 }
 
-.fa-trash-can {
+.trash,
+.arrow-down,
+.arrow-up {
   cursor: pointer;
 }
 
-.cart-item-controller .fa-chevron-up {
+.cart-item-controller .arrow-up {
   font-weight: bolder;
   cursor: pointer;
   color: var(--primaryColor);
 }
 
-.cart-item-controller .fa-chevron-down {
+.cart-item-controller .arrow-down {
   color: var(--mainRed);
   cursor: pointer;
   font-weight: bolder;
