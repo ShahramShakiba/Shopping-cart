@@ -193,13 +193,13 @@ class UI {
   cartLogic() {
     //-> clear cart
     clearCart.addEventListener('click', () => this.clearCart());
-  
+
     //-> cart functionality
     cartContent.addEventListener('click', (e) => handleClick(e));
-  
+
     const handleClick = (e) => {
       let target = e.target;
-  
+
       if (target.classList.contains('arrow-up')) {
         increaseQuantity(target);
       } else if (target.classList.contains('trash')) {
@@ -208,35 +208,52 @@ class UI {
         decreaseQuantity(target);
       }
     };
-  
+
     const increaseQuantity = (target) => {
+      //-> get item from cart
       const addedItem = cart.find((c) => c.id == target.dataset.id);
       addedItem.quantity++;
-  
+
+      //-> update cart value
       this.setCartValue(cart);
+
+      //-> save cart
       Storage.saveCart(cart);
-  
+
+      //-> update cart item number in Modal
       target.nextElementSibling.innerText = addedItem.quantity;
     };
-  
+
     const removeItemFromCart = (target) => {
       const removedItem = cart.find((c) => c.id == target.dataset.id);
+
+      //-> remove from cart item
       this.removeItem(removedItem.id);
-  
+
+      //-> save cart
       Storage.saveCart(cart);
+
+      //-> remove from cart content
       cartContent.removeChild(target.parentElement);
     };
-  
+
     const decreaseQuantity = (target) => {
       const subtractedItem = cart.find((c) => c.id == target.dataset.id);
-  
+
       if (subtractedItem.quantity === 1) {
         this.removeItem(subtractedItem.id);
+
         cartContent.removeChild(target.parentElement.parentElement);
       } else {
         subtractedItem.quantity--;
+
+        //-> update cart value
         this.setCartValue(cart);
+
+        //-> save cart
         Storage.saveCart(cart);
+
+        //-> update cart item number in Modal
         target.previousElementSibling.innerText = subtractedItem.quantity;
       }
     };
