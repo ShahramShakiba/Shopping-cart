@@ -519,7 +519,7 @@ footer {
 /*================$ Media Query $================*/
 @media screen and (min-width: 320px) {
   .nav-list {
-    /* display: none; */
+    display: none;
   }
 
   .nav-title {
