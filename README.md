@@ -2,6 +2,8 @@
 **_Shopping-cart (Bed-Shop)_** :<br/>
   > This is a mini-project of building a Shopping-cart to practice `HTML`, `CSS` and `JavaScript` using if else statment - while - template literals - forEach - filter - reduce - find - spread operator - Class - static method - DOM eventTarget - localStorage .  <br/>
 
+  > In this project, the focus is on the _product page_ and adding or removing items from the shopping cart. <br/>
+
 - A _bed shop_ is a store that specializes in selling beds and related products. <br/>
 
 - **`A few benefits of Todo-list :`**<br/>
