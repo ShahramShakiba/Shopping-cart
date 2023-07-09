@@ -8,11 +8,11 @@
 
 - **`Some reasons why someone should build a website for their store :`**<br/>
 **_1. Increased online visibility_ :**<br/>
-A website allows you to establish a presence online, making it easier for potential customers to find your store. With a website, you can reach a much larger audience than what is possible through just a physical store.<br/>
+A website allows you to establish a presence online, making it easier for potential customers to find your store. With a website, you can reach a much larger audience than what is possible through just a physical store.<br/><br/>
 **_2. 24/7 accessibility_ :**<br/>
-Unlike a physical store, a website allows customers to browse and purchase products at any time of the day, regardless of your store's operating hours. This can lead to increased sales and customer satisfaction.<br/>
+Unlike a physical store, a website allows customers to browse and purchase products at any time of the day, regardless of your store's operating hours. This can lead to increased sales and customer satisfaction.<br/><br/>
 **_3. Competitive advantage_ :**<br/>
-Having a website can give your store a competitive edge over competitors who may not have an online presence. <br/>
+Having a website can give your store a competitive edge over competitors who may not have an online presence. <br/><br/>
 **_4. Online sales and convenience_ :**<br/>
 If you offer online shopping and delivery options, a website enables you to expand your customer base beyond your local area. 
 
