@@ -72,7 +72,7 @@ class UI {
             ${item.title}
           </p>
           <p class="product-price">
-            ${item.price}
+            $${item.price}
           </p>
         </div>
 
