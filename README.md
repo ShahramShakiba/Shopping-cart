@@ -1,20 +1,20 @@
 # Description
 **_Shopping-cart (Bed-Shop)_** :<br/>
-  > This is a mini-project of building a Shopping-cart to practice `HTML`, `CSS` and `JavaScript` using if else statment - while - template literals - forEach - filter - reduce - find - spread operator - Class - static method - DOM eventTarget - localStorage .  <br/>
+  > This is a mini-project of building a Shopping-cart to practice `HTML`, `CSS` and `JavaScript` using if else statment - while - template literals - forEach - filter - reduce - find - spread operator - Classes - static method - DOM eventTarget - localStorage .  <br/>
 
   > In this project, the focus is on the _product page_ and adding or removing items from the shopping cart. <br/>
 
 - A _bed shop_ is a store that specializes in selling beds and related products. <br/>
 
-- **`A few benefits of Todo-list :`**<br/>
-**_1. Increased productivity_ :**<br/>
-A to-do list helps you stay organized and focused on your tasks, which can increase your productivity.<br/>
-**_2. Improved time management_ :**<br/>
-By prioritizing tasks and setting deadlines, you can manage your time more effectively and avoid wasting time on unimportant tasks.<br/>
-**_3. Better organization_ :**<br/>
-A to-do list helps you keep track of all your tasks in one place, making it easier to stay organized and avoid forgetting important tasks.<br/>
-**_4. Reduced stress_ :**<br/>
-When you have a clear plan of what needs to be done, you can avoid feeling overwhelmed or stressed about the amount of work you have to do.
+- **`Some reasons why someone should build a website for their store :`**<br/>
+**_1. Increased online visibility_ :**<br/>
+A website allows you to establish a presence online, making it easier for potential customers to find your store. With a website, you can reach a much larger audience than what is possible through just a physical store.<br/>
+**_2. 24/7 accessibility_ :**<br/>
+Unlike a physical store, a website allows customers to browse and purchase products at any time of the day, regardless of your store's operating hours. This can lead to increased sales and customer satisfaction.<br/>
+**_3. Competitive advantage_ :**<br/>
+Having a website can give your store a competitive edge over competitors who may not have an online presence. <br/>
+**_4. Online sales and convenience_ :**<br/>
+If you offer online shopping and delivery options, a website enables you to expand your customer base beyond your local area. 
 
 ### Video
 
