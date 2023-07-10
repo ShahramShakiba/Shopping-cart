@@ -24,7 +24,7 @@ https://github.com/ShahramShakiba/Shopping-cart/assets/110089830/ec88519a-e799-4
 
 
 ## Try it live :
-shahramshakiba.github.io/Shopping-cart/
+https://shahramshakiba.github.io/Shopping-cart/
 
  ## Stay in touch :
  • ` Author ` - <a href="https://t.me/DevZEEMO">Shahram Shakiba</a> <br/>
