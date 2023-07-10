@@ -76,9 +76,7 @@ header {
 }
 
 .nav-list li:hover {
-  padding-bottom: 0.2rem;
-  opacity: 0.8;
-  border-bottom: 2px solid;
+  opacity: 0.6;
 }
 
 .nav-list li {
