@@ -19,8 +19,12 @@ If you offer online shopping and delivery options, a website enables you to expa
 ### Video
 
 
-## Try it live :
+https://github.com/ShahramShakiba/Shopping-cart/assets/110089830/ec88519a-e799-4000-a781-49a37b4fee12
 
+
+
+## Try it live :
+shahramshakiba.github.io/Shopping-cart/
 
  ## Stay in touch :
  • ` Author ` - <a href="https://t.me/DevZEEMO">Shahram Shakiba</a> <br/>
