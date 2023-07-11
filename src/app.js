@@ -17,6 +17,10 @@ const cartBtn = document.querySelector('.cart-btn'),
   backDrop = document.querySelector('.backdrop'),
   closeModalBtn = document.querySelector('.cart-item-confirm');
 
+cartBtn.addEventListener('click', showModal);
+closeModalBtn.addEventListener('click', closeModal);
+backDrop.addEventListener('click', closeModal);
+
 function showModal() {
   backDrop.style.display = 'block';
   cartModal.style.opacity = '1';
@@ -29,10 +33,6 @@ function closeModal() {
   cartModal.style.opacity = '0';
   cartModal.style.top = '-100%';
 }
-
-cartBtn.addEventListener('click', showModal);
-closeModalBtn.addEventListener('click', closeModal);
-backDrop.addEventListener('click', closeModal);
 
 /*==================== Get Products ===================*/
 class Products {
@@ -53,6 +53,7 @@ let cart = [];
 let buttonsDOM = [];
 
 class UI {
+  //==> Display products on DOM <==
   displayProducts(products) {
     let result = '';
 
@@ -86,44 +87,47 @@ class UI {
     productsDOM.innerHTML = result;
   }
 
+  //==> Get products & add to shopping cart <==
   getCartBtns() {
-    //-> convert NodeList to Array
+    //-> btns are NodeList -> to convert NodeList to Array
     const addCartBtns = [...document.querySelectorAll('.add-to-cart')];
+    // console.log(addCartBtns);
 
     buttonsDOM = addCartBtns;
 
     //-> display products on cart
     addCartBtns.forEach((btn) => {
       const id = btn.dataset.id;
+      // console.log(id);
 
       //-> check if product is in the cart
       const isExist = cart.find((p) => p.id === id);
+
       if (isExist) {
-        btn.innerText = 'Added';
+        btn.textContent = 'Added';
         btn.disabled = true;
       }
 
       btn.addEventListener('click', (e) => {
         //-> when btn clicked to add product to cart
-        e.target.innerText = 'Added';
+        e.target.textContent = 'Added';
         e.target.disabled = true;
 
-        //-> get products from localStorage
+        //-> get products that has been added before, from localStorage
+        //-> quantity: 1 -> to find out whether it has been added or not
         const addedProduct = { ...Storage.getProducts(id), quantity: 1 };
 
-        //-> add to cart
+        //-> update shopping cart
         cart = [...cart, addedProduct];
 
-        //-> save cart to localStorage
+        //-> save shopping cart to localStorage
         Storage.saveCart(cart);
 
         //-> update cart value
         this.setCartValue(cart);
 
-        //-> add to cart item: what item user added to cart
+        //-> display added products in shopping cart
         this.addCartItem(addedProduct);
-
-        //-> get cart from localStorage to avoid resetting the cart value
       });
     });
   }
@@ -139,8 +143,8 @@ class UI {
       return acc + curr.quantity * curr.price;
     }, 0);
 
-    cartTotal.innerText = `Total price: $ ${totalPrice.toFixed(2)}`;
-    cartItemsCounter.innerText = tempCartItems;
+    cartTotal.textContent = `Total price: $ ${totalPrice.toFixed(2)}`;
+    cartItemsCounter.textContent = tempCartItems;
   }
 
   addCartItem(cartItem) {
@@ -167,20 +171,21 @@ class UI {
     <i class="ri-delete-bin-line trash" data-id=${cartItem.id}></i>
     `;
 
-    cartContent.appendChild(div);
+    cartContent.append(div);
   }
 
+  //==> Save information when page refreshed <==
   setUpApp() {
     //-> get cart from localStorage - update global cart
     cart = Storage.getCart() || [];
 
     //-> addCartItem to Modal
     cart.forEach((cartItem) => {
-      const addCartBtn = document.querySelector(`[data-id="${cartItem.id}"]`);
+      const addedCart = document.querySelector(`[data-id="${cartItem.id}"]`);
 
-      if (addCartBtn) {
-        addCartBtn.innerText = 'Added';
-        addCartBtn.disabled = true;
+      if (addedCart) {
+        addedCart.textContent = 'Added';
+        addedCart.disabled = true;
       }
 
       this.addCartItem(cartItem);
@@ -190,11 +195,12 @@ class UI {
     this.setCartValue(cart);
   }
 
+  //==> Save information when page refreshed <==
   cartLogic() {
     //-> clear cart
     clearCart.addEventListener('click', () => this.clearCart());
 
-    //-> cart functionality
+    //-> get cartContent to manipulate inc, dec and remove buttons
     cartContent.addEventListener('click', (e) => handleClick(e));
 
     const handleClick = (e) => {
@@ -209,60 +215,69 @@ class UI {
       }
     };
 
+    //-> increase products <-
     const increaseQuantity = (target) => {
-      //-> get item from cart
-      const addedItem = cart.find((c) => c.id == target.dataset.id);
+      //get item from cart
+      const addedItem = cart.find((c) => c.id === parseInt(target.dataset.id));
       addedItem.quantity++;
 
-      //-> update cart value
+      //update total shopping cart value
       this.setCartValue(cart);
 
-      //-> save cart
       Storage.saveCart(cart);
 
-      //-> update cart item number in Modal
-      target.nextElementSibling.innerText = addedItem.quantity;
+      //update cart item number in Modal
+      target.nextElementSibling.textContent = addedItem.quantity;
     };
 
+    //-> remove products <-
     const removeItemFromCart = (target) => {
-      const removedItem = cart.find((c) => c.id == target.dataset.id);
+      const removedItem = cart.find(
+        (c) => c.id === parseInt(target.dataset.id)
+      );
 
-      //-> remove from cart item
+      //remove from cart item
       this.removeItem(removedItem.id);
 
-      //-> save cart
       Storage.saveCart(cart);
 
-      //-> remove from cart content
+      //remove product from cart content
+      //its parentElement = cart-item
       cartContent.removeChild(target.parentElement);
     };
 
+    //-> decrease products <-
     const decreaseQuantity = (target) => {
-      const subtractedItem = cart.find((c) => c.id == target.dataset.id);
+      const subtractedItem = cart.find(
+        (c) => c.id === parseInt(target.dataset.id)
+      );
 
+      //remove when one product remained  
       if (subtractedItem.quantity === 1) {
         this.removeItem(subtractedItem.id);
 
+        //first parentElement = cart-item-controller
+        //second parentElement = cart-item  
         cartContent.removeChild(target.parentElement.parentElement);
       } else {
         subtractedItem.quantity--;
 
-        //-> update cart value
+        //update cart value
         this.setCartValue(cart);
 
-        //-> save cart
         Storage.saveCart(cart);
 
-        //-> update cart item number in Modal
-        target.previousElementSibling.innerText = subtractedItem.quantity;
+        //update cart item number in Modal
+        target.previousElementSibling.textContent = subtractedItem.quantity;
       }
     };
   }
 
   clearCart() {
+    //-> get all carts and pass id to removeItem()
     cart.forEach((cItem) => this.removeItem(cItem.id));
 
-    // remove cart content children
+    //-> remove cart content children from Modal
     while (cartContent.children.length > 0) {
       cartContent.removeChild(cartContent.children[0]);
     }
@@ -271,6 +286,7 @@ class UI {
   }
 
   removeItem(id) {
+    // console.log(id);
     //-> update cart
     cart = cart.filter((c) => c.id !== id);
 
@@ -280,21 +296,19 @@ class UI {
     //-> update localStorage
     Storage.saveCart(cart);
 
-    //-> get add to cart btns - and update text and disabled
-    this.getSingleBtn(id);
-  }
-
-  getSingleBtn(id) {
+    //-> get carts  and update text and disabled
     const button = buttonsDOM.find(
       (btn) => parseInt(btn.dataset.id) === parseInt(id)
     );
-    button.innerText = 'Purchase';
+
+    button.textContent = 'Purchase';
     button.disabled = false;
   }
 }
 
 /*==================== localStorage ===================*/
 class Storage {
+  // get loaded products the set "products" on localStorage
   static saveProducts(products) {
     localStorage.setItem('products', JSON.stringify(products));
   }
@@ -321,7 +335,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const productsData = products.getProducts();
 
   const ui = new UI();
+  //-> display products on DOM
   ui.displayProducts(productsData);
+
+  //-> get buttons
   ui.getCartBtns();
 
   //-> get card and set up app
