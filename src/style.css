@@ -531,11 +531,12 @@ footer {
   }
 
   .menu-icon {
-    padding-left: 2.5rem;
+    padding-left: 1rem;
   }
 
   .nav-title {
     font-size: 1.1rem;
+    padding-right: 4rem;
   }
 
   .search-border .search {
@@ -584,8 +585,12 @@ footer {
   }
 
   /* modal */
+  .cart {
+    width: 90%;
+  }
+
   .cart-item {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .cart-title {
@@ -603,7 +608,7 @@ footer {
   }
 
   .cart-footer .cart-total {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin: 0.2rem;
   }
 
