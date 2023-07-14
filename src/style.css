@@ -516,8 +516,22 @@ footer {
 
 /*================$ Media Query $================*/
 @media screen and (min-width: 320px) {
-  .nav-list {
+  .nav-list li {
     display: none;
+  }
+
+  .nav-center {
+    margin: 0;
+  }
+
+  .cart-btn {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+  }
+
+  .menu-icon {
+    padding-left: 2.5rem;
   }
 
   .nav-title {
@@ -565,9 +579,13 @@ footer {
     font-size: 0.8rem;
   }
 
+  .cart-items {
+    font-size: 0.8rem;
+  }
+
   /* modal */
   .cart-item {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 
   .cart-title {
@@ -576,7 +594,7 @@ footer {
 
   .cart-item-desc h4 {
     font-weight: 500;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     padding: 10px;
   }
 
@@ -586,10 +604,12 @@ footer {
 
   .cart-footer .cart-total {
     font-size: 0.8rem;
+    margin: 0.2rem;
   }
 
   .cart-footer button {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+    margin-right: 0.1rem;
   }
 }
 
@@ -598,11 +618,17 @@ footer {
     display: none;
   }
 
-  .nav-list {
+  .nav-center {
+    margin: 0;
+  }
+
+  .cart-btn {
     display: flex;
+    width: 10%;
   }
 
   .nav-list li {
+    display: flex;
     font-size: 0.8rem;
   }
 
@@ -633,15 +659,17 @@ footer {
     display: none;
   }
 
-  .nav-list {
-    display: flex;
-  }
-
   .nav-title {
     font-size: 1.3rem;
   }
 
+  .cart-btn {
+    display: flex;
+    width: 10%;
+  }
+
   .nav-list li {
+    display: flex;
     font-size: 0.9rem;
   }
 
