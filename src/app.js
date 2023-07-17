@@ -47,7 +47,8 @@ const productsDOM = document.querySelector('.products-center'),
   cartTotal = document.querySelector('.cart-total'),
   cartItemsCounter = document.querySelector('.cart-items'),
   cartContent = document.querySelector('.cart-content'),
-  clearCart = document.querySelector('.clear-cart');
+  clearCart = document.querySelector('.clear-cart'),
+  searchInput = document.querySelector('.search');
 
 let cart = [];
 let buttonsDOM = [];
@@ -252,12 +253,12 @@ class UI {
         (c) => c.id === parseInt(target.dataset.id)
       );
 
-      //remove when one product remained  
+      //remove when one product remained
       if (subtractedItem.quantity === 1) {
         this.removeItem(subtractedItem.id);
 
         //first parentElement = cart-item-controller
-        //second parentElement = cart-item  
+        //second parentElement = cart-item
         cartContent.removeChild(target.parentElement.parentElement);
       } else {
         subtractedItem.quantity--;
@@ -304,6 +305,20 @@ class UI {
     button.textContent = 'Purchase';
     button.disabled = false;
   }
+
+  //==> Search Products <==
+  searchItem() {
+    searchInput.addEventListener('input', (e) => {
+      const searchValue = e.target.value.toLowerCase();
+
+      const filteredProducts = productsData.filter((product) => {
+        return product.title.toLowerCase().includes(searchValue);
+      });
+
+      this.displayProducts(filteredProducts);
+      this.getCartBtns()
+    });
+  }
 }
 
 /*==================== localStorage ===================*/
@@ -345,6 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
   ui.setUpApp();
 
   ui.cartLogic();
+
+  ui.searchItem();
 
   Storage.saveProducts(productsData);
 });
