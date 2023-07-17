@@ -78,7 +78,7 @@ class UI {
         </div>
 
         <button class="btn add-to-cart" data-id=${item.id}>
-          Purchase
+          Buy
         </button>
       </div>
       `;

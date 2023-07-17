@@ -225,8 +225,6 @@ header {
 }
 
 .products-center {
-  display: flex;
-  justify-content: center;
   width: 100%;
   max-width: 1024px;
   color: var(--mainBlack);
@@ -556,7 +554,7 @@ footer {
   }
 
   .product {
-    width: 15rem;
+    width: 100%;
     padding-bottom: 0.5rem;
   }
 
@@ -630,6 +628,10 @@ footer {
   .cart-btn {
     display: flex;
     width: 10%;
+  }
+
+  .nav-title {
+    padding: 0;
   }
 
   .nav-list li {
