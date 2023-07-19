@@ -54,7 +54,7 @@ let cart = [];
 let buttonsDOM = [];
 
 class UI {
-  //==> Display products on DOM <==
+  //======> Display products on DOM <======
   displayProducts(products) {
     let result = '';
 
@@ -88,7 +88,7 @@ class UI {
     productsDOM.innerHTML = result;
   }
 
-  //==> Get products & add to shopping cart <==
+  //======> Get products & add to shopping cart <=====
   getCartBtns() {
     //-> btns are NodeList -> to convert NodeList to Array
     const addCartBtns = [...document.querySelectorAll('.add-to-cart')];
@@ -98,8 +98,8 @@ class UI {
 
     //-> display products on cart
     addCartBtns.forEach((btn) => {
+      // console.log(btn.dataset.id);
       const id = btn.dataset.id;
-      // console.log(id);
 
       //-> check if product is in the cart
       const isExist = cart.find((p) => p.id === id);
@@ -124,7 +124,7 @@ class UI {
         //-> save shopping cart to localStorage
         Storage.saveCart(cart);
 
-        //-> update cart value
+        //-> update number of items in shoppingCart & totalPrice
         this.setCartValue(cart);
 
         //-> display added products in shopping cart
@@ -175,7 +175,7 @@ class UI {
     cartContent.append(div);
   }
 
-  //==> Save information when page refreshed <==
+  //======> Save information when page refreshed <=====
   setUpApp() {
     //-> get cart from localStorage - update global cart
     cart = Storage.getCart() || [];
@@ -189,14 +189,15 @@ class UI {
         addedCart.disabled = true;
       }
 
+      //-> display added products in shopping cart
       this.addCartItem(cartItem);
     });
 
-    // set values: price + item
+    // Update values: price + item
     this.setCartValue(cart);
   }
 
-  //==> Save information when page refreshed <==
+  //======> Shopping-Cart functionality <=====
   cartLogic() {
     //-> clear cart
     clearCart.addEventListener('click', () => this.clearCart());
@@ -302,11 +303,11 @@ class UI {
       (btn) => parseInt(btn.dataset.id) === parseInt(id)
     );
 
-    button.textContent = 'Purchase';
+    button.textContent = 'Buy';
     button.disabled = false;
   }
 
-  //==> Search Products <==
+  //======> Search Products <======
   searchItem() {
     searchInput.addEventListener('input', (e) => {
       const searchValue = e.target.value.toLowerCase();
@@ -323,7 +324,7 @@ class UI {
 
 /*==================== localStorage ===================*/
 class Storage {
-  // get loaded products the set "products" on localStorage
+  // save loaded products and set "products" on localStorage
   static saveProducts(products) {
     localStorage.setItem('products', JSON.stringify(products));
   }
@@ -363,5 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ui.searchItem();
 
+  //-> Display saved products on page loading 
   Storage.saveProducts(productsData);
 });
