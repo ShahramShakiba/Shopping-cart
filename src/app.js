@@ -24,8 +24,8 @@ backDrop.addEventListener('click', closeModal);
 function showModal() {
   backDrop.style.display = 'block';
   cartModal.style.opacity = '1';
-  cartModal.style.top = '21%';
   cartModal.style.position = 'fixed';
+  cartModal.style.top = '21%';
 }
 
 function closeModal() {
@@ -48,6 +48,8 @@ const productsDOM = document.querySelector('.products-center'),
   cartItemsCounter = document.querySelector('.cart-items'),
   cartContent = document.querySelector('.cart-content'),
   clearCart = document.querySelector('.clear-cart'),
+  searchInput = document.querySelector('.search');
+  searchInput = document.querySelector('.search');
   searchInput = document.querySelector('.search');
 
 let cart = [];
@@ -145,6 +147,7 @@ class UI {
     }, 0);
 
     cartTotal.textContent = `Total price: $ ${totalPrice.toFixed(2)}`;
+
     cartItemsCounter.textContent = tempCartItems;
   }
 
@@ -164,12 +167,12 @@ class UI {
     </div>
 
     <div class="cart-item-controller">
-      <i class="ri-arrow-up-s-line arrow-up" data-id=${cartItem.id}></i>
+      <i class="ri-arrow-up-s-line arrow-up" data-id=${cartItem.id} ></i>
       <p>${cartItem.quantity}</p>
-      <i class="ri-arrow-down-s-line arrow-down" data-id=${cartItem.id}></i>
+      <i class="ri-arrow-down-s-line arrow-down" data-id=${cartItem.id} ></i>
     </div>
 
-    <i class="ri-delete-bin-line trash" data-id=${cartItem.id}></i>
+    <i class="ri-delete-bin-line trash" data-id=${cartItem.id} ></i>
     `;
 
     cartContent.append(div);
@@ -279,7 +282,7 @@ class UI {
     //-> get all carts and pass id to removeItem()
     cart.forEach((cItem) => this.removeItem(cItem.id));
 
-    //-> remove cart content children from Modal
+    //-> remove cart-content children from Modal
     while (cartContent.children.length > 0) {
       cartContent.removeChild(cartContent.children[0]);
     }
