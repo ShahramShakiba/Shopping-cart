@@ -49,8 +49,6 @@ const productsDOM = document.querySelector('.products-center'),
   cartContent = document.querySelector('.cart-content'),
   clearCart = document.querySelector('.clear-cart'),
   searchInput = document.querySelector('.search');
-  searchInput = document.querySelector('.search');
-  searchInput = document.querySelector('.search');
 
 let cart = [];
 let buttonsDOM = [];
@@ -320,7 +318,7 @@ class UI {
       });
 
       this.displayProducts(filteredProducts);
-      this.getCartBtns()
+      this.getCartBtns();
     });
   }
 }
@@ -367,6 +365,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ui.searchItem();
 
-  //-> Display saved products on page loading 
+  //-> Display saved products on page loading
   Storage.saveProducts(productsData);
 });
