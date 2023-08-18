@@ -1,4 +1,4 @@
-# Descriptio
+# Description
 **_Shopping-cart (Bed-Shop)_** :<br/>
   > This is a mini-project of building a Shopping-cart to practice `HTML`, `CSS` and `JavaScript` using if else statement - while - template literals - forEach - filter - reduce - find - spread operator - Classes - static method - DOM eventTarget - localStorage .  <br/>
 
