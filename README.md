@@ -1,5 +1,5 @@
-# Description
-**_Shopping-cart (Bed-Shop)_** :<br/>
+# <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/></a> &nbsp; Shopping-cart (Bed-Shop) 
+**_Description_** :<br/>
   > This is a mini-project of building a Shopping-cart to practice `HTML`, `CSS` and `JavaScript` using if else statement - while - template literals - forEach - filter - reduce - find - spread operator - Classes - static method - DOM eventTarget - localStorage .  <br/>
 
   > In this project, the focus is on the _product page_ and adding or removing items from the shopping cart. <br/>
