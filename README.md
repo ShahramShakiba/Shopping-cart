@@ -28,7 +28,7 @@ https://shahramshakiba.github.io/Shopping-cart/
  ## Stay in touch :
  • ` Telegram ` - <a href="https://t.me/ShahramDev">Shahram Shakiba</a> <br/>
  • ` WhatsApp ` - <a href="https://wa.me/message/LM2IMM3ABZ7ZM1">Shahram Shakiba</a> <br/>
- • ` Linkedin ` - https://www.linkedin.com/in/shahram-shakiba-a19223248/ <br/>
- • ` Instagram ` - https://instagram.com/shahram.shakibaa?igshid=MzNlNGNkZWQ4Mg== <br/>
- • ` Twitter ` - https://twitter.com/DevZEEMO?t=NrBFV-j1adqZ9lEaHlNp-g&s=09
+ • ` Linkedin ` - <a href="https://www.linkedin.com/in/shahram-shakiba-dev/">Shahram Shakiba</a> <br/>
+ • ` Instagram ` - <a href="https://instagram.com/shahram.shakibaa?igshid=MzNlNGNkZWQ4Mg==">Shahram Shakiba</a> <br/>
+ • ` Twitter ` - <a href="https://twitter.com/DevZEEMO">Shahram Shakiba</a>
 
