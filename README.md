@@ -4,6 +4,7 @@
 
   > In this project, the focus is on the _product page_ and adding or removing items from the shopping cart. <br/>
 
+
 - A _bed shop_ is a store that specializes in selling beds and related products. <br/><br/>
 
 - **`Some reasons why someone should build a website for their store :`**<br/>
