@@ -1,11 +1,10 @@
 # <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/></a> &nbsp; Shopping-cart (Bed-Shop) 
 **_Description_** :<br/>
-  > This is a practice-project of building a Shopping-cart to practice `HTML`, `CSS` and `JavaScript` using if else statement - while - template literals - forEach - filter - reduce - find - spread operator - Classes - static method - DOM eventTarget - localStorage .  <br/>
+  > This is a `Practice-Project` of building a Shopping-cart to practice _HTML_, _CSS_ and _JavaScript_. <br/>
 
   > In this project, the focus is on the _product page_ and adding or removing items from the shopping cart. <br/>
 
-
-- A _bed shop_ is a store that specializes in selling beds and related products. <br/><br/>
+ <br/>
 
 - **`Some reasons why someone should build a website for their store :`**<br/>
 **_1. Increased online visibility_ :**<br/>
@@ -17,7 +16,8 @@ Having a website can give your store a competitive edge over competitors who may
 **_4. Online sales and convenience_ :**<br/>
 If you offer online shopping and delivery options, a website enables you to expand your customer base beyond your local area. 
 
-### Video
+### 🎬
+
 https://github.com/ShahramShakiba/Shopping-cart/assets/110089830/ec88519a-e799-4000-a781-49a37b4fee12
 
 <br/> 
