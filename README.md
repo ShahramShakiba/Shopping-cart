@@ -17,7 +17,7 @@ Having a website can give your store a competitive edge over competitors who may
 If you offer online shopping and delivery options, a website enables you to expand your customer base beyond your local area. <br/><br/>
 
 ###  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Magnifying%20Glass%20Tilted%20Right.webp" alt="Magnifying Glass Tilted Right" width="45" /> Give it a go in real-time
-<a href="https://shahramshakiba.github.io/HomeSmart-Landing-Page/" target="_blank">
+<a href="https://shahramshakiba.github.io/Shopping-cart/" target="_blank">
     Shopping-Cart
 </a> <br/><br/><br/>
 
